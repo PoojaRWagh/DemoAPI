@@ -1,0 +1,25 @@
+<button type="button" (click)="apiData()">Click to view Data</button>
+<table border="1" *ngIf="isclicked" >
+  <thead>
+    <tr>
+      <th>Sr.no</th>
+      <th>alpha_two_code</th>
+      <th>name</th>
+      <th>web_pages</th>
+      <th>country</th>
+      <th>action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let demo of demodata, let i=index;">
+      <td>{{i+1}}</td>
+      <td>{{demo.alpha_two_code}}</td>    
+      <td>{{demo.name}}</td>
+      <td>{{demo.web_pages}}</td>
+      <td>{{demo.country}}</td>
+      <td><button type="button" (click)="info(demo.name)">info</button></td>
+
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>
